@@ -6,8 +6,9 @@ const CalSlice = createSlice({
     name: "Arnab",
     initialState,
     reducers: {
-        add: ((state) => {
-            state.num = state.num + 1
+        add: ((state, action) => {
+            state.num = state.num + Number(action.payload)
+            console.log(action.payload)
         }),
         sub: ((state) => {
             state.num = state.num - 1
